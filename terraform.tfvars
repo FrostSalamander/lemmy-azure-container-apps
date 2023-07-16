@@ -4,7 +4,7 @@
 helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbf"
 
 # NGINX
-nginx_image    = "897safsacr.azurecr.io/lemmy-nginx:db1"
+nginx_image    = "897safsacr.azurecr.io/lemmy-nginx:dbg"
 
 # Caddy
 caddy_image    = "897safsacr.azurecr.io/lemmy-caddy:db2"

@@ -1,5 +1,5 @@
-resource "azurerm_container_app" "nginx" {
-  name                         = "nginx"
+resource "azurerm_container_app" "nginx_hello_world" {
+  name                         = "nginx-hello-world"
   container_app_environment_id = azurerm_container_app_environment.containerapp_env.id
   resource_group_name          = azurerm_resource_group.containerapp_rg.name
   revision_mode                = "Single"
@@ -14,8 +14,8 @@ resource "azurerm_container_app" "nginx" {
     max_replicas = 1
 
     container {
-      name   = "nginx"
-      image  = var.nginx_image
+      name   = "nginx-hello-world"
+      image  = var.helloworld_nginx_image
       cpu    = 0.5
       memory = "1Gi"
     }

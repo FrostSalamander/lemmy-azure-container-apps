@@ -23,6 +23,10 @@ variable "pgconnectionstring" {
   sensitive = false
 }
 
+variable "helloworld_nginx_image" {
+  type = string
+}
+
 variable "nginx_image" {
   type = string
 }

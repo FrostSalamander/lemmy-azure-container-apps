@@ -17,7 +17,7 @@ resource "azurerm_container_app" "lemmy_ui" {
 
       env {
         name = "LEMMY_UI_LEMMY_INTERNAL_HOST"
-        value = "lemmy--jxef5re.jollysky-9d68b8d3.uksouth.azurecontainerapps.io:80" # container apps exposes 80/443 only
+        value = azurerm_container_app.lemmy.latest_revision_fqdn
       }
       env {
         name = "LEMMY_UI_LEMMY_EXTERNAL_HOST"

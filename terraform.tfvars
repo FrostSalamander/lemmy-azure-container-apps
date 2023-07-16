@@ -1,7 +1,7 @@
 // Container App Images
 
 # NGINX 'hello world' image
-helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbe"
+helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbf"
 
 # NGINX
 nginx_image    = "897safsacr.azurecr.io/lemmy-nginx:db1"

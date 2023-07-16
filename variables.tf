@@ -13,6 +13,10 @@ variable "db_password" {
   sensitive = true
 }
 
+variable "lemmy_external_fqdn" {
+  type = string
+}
+
 variable "home_ip" {
   type = string
   sensitive = true

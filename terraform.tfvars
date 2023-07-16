@@ -1,3 +1,6 @@
+
+lemmy_external_fqdn = "feddit.deggymacets.uk"
+
 // Container App Images
 
 # NGINX 'hello world' image
@@ -14,4 +17,4 @@ caddy_image    = "897safsacr.azurecr.io/lemmy-caddy:db2"
 lemmy_ui_image = "docker.io/dessalines/lemmy-ui:0.18.2"
 
 # Lemmy backend
-lemmy_image    = "897safsacr.azurecr.io/lemmy:db3"
+lemmy_image    = "897safsacr.azurecr.io/lemmy:dbm"

@@ -21,7 +21,7 @@ resource "azurerm_container_app" "lemmy_ui" {
       }
       env {
         name = "LEMMY_UI_LEMMY_EXTERNAL_HOST"
-        value = "feddit.deggymacets.com"
+        value = var.lemmy_external_fqdn
       }
       env {
         name = "LEMMY_UI_HTTPS"

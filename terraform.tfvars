@@ -1,7 +1,7 @@
 // Container App Images
 
 # NGINX 'hello world' image
-helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbf"
+helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbj"
 
 # NGINX
 # :dbg last 'working' image

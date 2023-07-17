@@ -3,6 +3,10 @@ variable "location" {
   default = "\"uksouth\""
 }
 
+variable "db_server_name" {
+  type = string
+}
+
 variable "db_username" {
   type = string
   sensitive = true

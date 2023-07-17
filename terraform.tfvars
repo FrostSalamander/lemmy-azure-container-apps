@@ -1,4 +1,6 @@
 
+db_server_name = "deggymacets"
+
 lemmy_external_fqdn = "feddit.deggymacets.uk"
 
 // Container App Images

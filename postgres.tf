@@ -1,5 +1,5 @@
 resource "azurerm_postgresql_flexible_server" "postgres" {
-  name                   = "lemmyserver"
+  name                   = var.db_server_name
   resource_group_name    = azurerm_resource_group.containerapp_rg.name
   location               = azurerm_resource_group.containerapp_rg.location
   version                = "15"

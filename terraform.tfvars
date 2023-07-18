@@ -13,7 +13,7 @@ helloworld_nginx_image = "897safsacr.azurecr.io/helloworld-nginx:dbk"
 nginx_image    = "897safsacr.azurecr.io/lemmy-nginx:dbh"
 
 # Caddy
-caddy_image    = "897safsacr.azurecr.io/lemmy-caddy:db2"
+caddy_image    = "897safsacr.azurecr.io/lemmy-caddy:dbp"
 
 # Lemmy UI
 lemmy_ui_image = "897safsacr.azurecr.io/lemmy-ui:dbn"

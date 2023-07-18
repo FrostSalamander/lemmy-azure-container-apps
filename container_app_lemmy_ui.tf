@@ -12,8 +12,8 @@ resource "azurerm_container_app" "lemmy_ui" {
     container {
       name   = "lemmy-ui"
       image  = var.lemmy_ui_image
-      cpu    = 0.5
-      memory = "1Gi"
+      cpu    = 1.0
+      memory = "2Gi"
 
       env {
         name = "LEMMY_UI_LEMMY_INTERNAL_HOST"

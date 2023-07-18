@@ -17,8 +17,8 @@ resource "azurerm_container_app" "lemmy_ui" {
 
       env {
         name = "LEMMY_UI_LEMMY_INTERNAL_HOST"
-        #value = azurerm_container_app.lemmy.latest_revision_fqdn
-        value = "lemmy:80"
+        value = azurerm_container_app.lemmy.latest_revision_fqdn
+        #value = "lemmy:80"
       }
       env {
         name = "LEMMY_UI_LEMMY_EXTERNAL_HOST"

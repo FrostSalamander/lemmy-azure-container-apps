@@ -16,7 +16,8 @@ nginx_image    = "897safsacr.azurecr.io/lemmy-nginx:dbh"
 caddy_image    = "897safsacr.azurecr.io/lemmy-caddy:db2"
 
 # Lemmy UI
-lemmy_ui_image = "docker.io/dessalines/lemmy-ui:0.18.2"
+lemmy_ui_image = "897safsacr.azurecr.io/lemmy-ui:dbn"
+#lemmy_ui_image = "docker.io/dessalines/lemmy-ui:0.18.2"
 
 # Lemmy backend
 lemmy_image    = "897safsacr.azurecr.io/lemmy:dbm"

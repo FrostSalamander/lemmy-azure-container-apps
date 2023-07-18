@@ -32,6 +32,7 @@ resource "azurerm_container_app" "lemmy" {
   }
 
   ingress {
+    external_enabled = true
     allow_insecure_connections = true
     target_port = 8536
 

@@ -26,6 +26,12 @@ resource "azurerm_container_app" "nginx_lemmy" {
     external_enabled = true
     target_port = 8080
 
+    custom_domain {
+      certificate_binding_type = "SniEnabled"
+      certificate_id = azurerm_container_app_environment_certificate.containerapp_cert.id
+      name = var.lemmy_external_fqdn
+    }
+
     traffic_weight {
       percentage = 100
       latest_revision = true

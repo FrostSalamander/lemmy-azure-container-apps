@@ -48,6 +48,9 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "container_apps" {
 resource "azurerm_postgresql_flexible_server_firewall_rule" "lemmy_app" {
   name             = "lemmy-app"
   server_id        = azurerm_postgresql_flexible_server.postgres.id
+
+  # TODO: outbound_ip_addresses is a list, but this only works for the first
+  # item in the list. Can't use for_each as values not known up front.
   start_ip_address = azurerm_container_app.lemmy.outbound_ip_addresses[0]
   end_ip_address   = azurerm_container_app.lemmy.outbound_ip_addresses[0]
 }

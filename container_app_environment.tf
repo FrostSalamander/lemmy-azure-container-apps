@@ -1,3 +1,4 @@
+# This shouldn't be required, but: https://github.com/hashicorp/terraform-provider-azurerm/issues/20748
 resource "azurerm_log_analytics_workspace" "containerapp_ws" {
   name                = "containerapp-ws"
   location            = azurerm_resource_group.containerapp_rg.location

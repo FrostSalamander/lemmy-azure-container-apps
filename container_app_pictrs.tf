@@ -15,6 +15,10 @@ resource "azurerm_container_app" "pictrs" {
   }
 
   template {
+
+    min_replicas = 1
+    max_replicas = 1
+
     container {
       name   = "pictrs"
       image  = "asonix/pictrs:0.4.0"

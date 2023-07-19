@@ -17,7 +17,7 @@ resource "azurerm_container_app_environment" "containerapp_env" {
 resource "azurerm_container_app_environment_certificate" "containerapp_cert" {
   name                         = "cf-cert"
   container_app_environment_id = azurerm_container_app_environment.containerapp_env.id
-  certificate_blob             = var.container_env_cert
+  certificate_blob_base64      = var.container_env_cert
   certificate_password         = ""
 }
 

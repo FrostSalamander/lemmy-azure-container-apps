@@ -43,14 +43,11 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "container_apps" {
   end_ip_address   = azurerm_container_app_environment.containerapp_env.static_ip_address
 }
 
-# Create a rule for each outbound IP address on the lemmy backend app
-resource "azurerm_postgresql_flexible_server_firewall_rule" "lemmy_app" {
-  for_each = azurerm_container_app.lemmy.outbound_ip_addresses
+module "lemmy_firewall_rules" {
+  source = "./modules/postgres_firewall_rules"
 
-  name             = "lemmy-app-${each.key}"
-  server_id        = azurerm_postgresql_flexible_server.postgres.id
-  start_ip_address = each.value
-  end_ip_address   = each.value
+  source_ips = azurerm_container_app.lemmy.outbound_ip_addresses
+  postgres_server_id = azurerm_postgresql_flexible_server.postgres.id
 }
 
 

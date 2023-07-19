@@ -28,7 +28,7 @@ resource "azurerm_postgresql_flexible_server_database" "lemmy_db" {
   charset   = "utf8"
 }
 
-
+# TODO: make this a list for multiple admins
 resource "azurerm_postgresql_flexible_server_firewall_rule" "home" {
   name             = "home"
   server_id        = azurerm_postgresql_flexible_server.postgres.id
@@ -36,6 +36,7 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "home" {
   end_ip_address   = var.home_ip
 }
 
+# Rule for Container App Environment outbound IP. Not clear if this is actually needed
 resource "azurerm_postgresql_flexible_server_firewall_rule" "container_apps" {
   name             = "container-apps"
   server_id        = azurerm_postgresql_flexible_server.postgres.id
@@ -43,11 +44,14 @@ resource "azurerm_postgresql_flexible_server_firewall_rule" "container_apps" {
   end_ip_address   = azurerm_container_app_environment.containerapp_env.static_ip_address
 }
 
-module "lemmy_firewall_rules" {
-  source = "./modules/postgres_firewall_rules"
-
-  source_ips = azurerm_container_app.lemmy.outbound_ip_addresses
-  postgres_server_id = azurerm_postgresql_flexible_server.postgres.id
+# Rule for Lemmy backend container app. Definitely needed.
+resource "azurerm_postgresql_flexible_server_firewall_rule" "lemmy_app" {
+  name             = "lemmy-app"
+  server_id        = azurerm_postgresql_flexible_server.postgres.id
+  start_ip_address = azurerm_container_app.lemmy.outbound_ip_addresses[0]
+  end_ip_address   = azurerm_container_app.lemmy.outbound_ip_addresses[0]
 }
+
+
 
 
